@@ -13,7 +13,7 @@ const Navbar = () => {
         <Link to="/" style={{textDecoration:"none"}}>
           <span>Alumni Connect</span>
         </Link>
-
+        <br/>
         <div className="search">
           <SearchOutlinedIcon />
           <input type="text" placeholder="Search"/>
@@ -22,10 +22,9 @@ const Navbar = () => {
       </div>
 
       <div className="right">
+        <AccountCircleOutlinedIcon />
         <NotificationsOutlinedIcon />
         <ChatBubbleOutlineOutlinedIcon />
-        <MailOutlinedIcon />
-        <AccountCircleOutlinedIcon />
       </div>
     </div>
   )

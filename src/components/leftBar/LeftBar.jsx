@@ -1,5 +1,8 @@
 import "./leftBar.scss"
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
+import EventNoteOutlinedIcon from '@mui/icons-material/EventNoteOutlined';
+import Groups3OutlinedIcon from '@mui/icons-material/Groups3Outlined';
+import EmojiEventsOutlinedIcon from '@mui/icons-material/EmojiEventsOutlined';
 
 const LeftBar = () => {
   return (
@@ -12,23 +15,18 @@ const LeftBar = () => {
             <span>Home</span>
           </div>
 
-          <div className="noticeBoard">
-            <HomeOutlinedIcon/>
-            <span>Notice Board</span>
-          </div>
-
           <div className="events">
-            <HomeOutlinedIcon/>
+            <EventNoteOutlinedIcon/>
             <span>Events</span>
           </div>
 
           <div className="alumni">
-            <HomeOutlinedIcon/>
+            <Groups3OutlinedIcon/>
             <span>Alumni</span>
           </div>
 
           <div className="awards">
-            <HomeOutlinedIcon/>
+            <EmojiEventsOutlinedIcon/>
             <span>Awards</span>
           </div>
 
@@ -43,6 +41,8 @@ const LeftBar = () => {
           </div>
 
         </div>
+        <hr/>
+        
       </div>
     </div>
   )

@@ -3,8 +3,12 @@
     align-items: center;
     justify-content: space-between;
     padding: 10px 20px;
-    height: 50px;
+    height: 40px;
     border-bottom: 1px solid lightgrey;
+    position: sticky;
+    top: 0;
+    background-color: #14213D;
+    color: white;
 
     .left{
         display: flex;
@@ -14,18 +18,22 @@
         span{
             font-weight: bold;
             font-size: 20px;
-            color: #14213D;
+            color: white;
         }
 
         .search{
             display: flex;
             align-items: center;
             gap: 10px;
-            border: 1px solid lightgrey;
+            border: 1px solid rgba(#E5E5E5,0.3);
             border-radius: none;
+            padding: 0px 5px;
+            
             input{
                 border: none;
                 width: 600px;
+                background-color: transparent;
+                color: #E5E5E5;
             }
         }
     }

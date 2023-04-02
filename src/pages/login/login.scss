@@ -52,10 +52,9 @@
             justify-content: center;
             padding: 50px;
             gap: 50px;
-            color: #E5E5E5;
 
             h1{
-                color: #343a40;
+                color: #555;
             }
 
             form {
@@ -65,7 +64,7 @@
 
                 input{
                     border: none;
-                    border-bottom: 1px solid #E5E5E5;
+                    border-bottom: 1px solid lightgray;
                     padding: 20px 10px;
                 }
 

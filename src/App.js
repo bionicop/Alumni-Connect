@@ -1,7 +1,9 @@
 import Navbar from "./components/navbar/Navbar"
 import LeftBar from "./components/leftBar/LeftBar";
-import RightBar from "./components/rightbar/RightBar";
 import Home from "./pages/home/Home";
+import Alumni from "./pages/alumni/Alumni";
+import Awards from "./pages/awards/Awards";
+import Events from "./pages/events/Events";
 import Profile from "./pages/profile/Profile";
 import Login from "./pages/login/Login"
 import Register from "./pages/register/Register";
@@ -19,12 +21,13 @@ function App() {
 
   const Layout = ()=>{
     return(
-      <div>
+      <div className="$themes">
         <Navbar />
-        <div style={{display:"flex"}}>
+        <div style={{display: "flex"}}>
           <LeftBar />
-          <Outlet />
-          <RightBar />
+          <div style={{flex: 10}}>
+            <Outlet />
+          </div>
         </div>
       </div>
     );
@@ -58,13 +61,26 @@ function App() {
       ]
     },
     {
+      path:"/alumni",
+      element:<Alumni />,
+    },
+    {
+      path:"/awards",
+      element:<Awards />,
+    },
+    {
       path: "/login",
       element: <Login />,
+    },
+    {
+      path: "/events",
+      element: <Events />,
     },
     {
       path: "/register",
       element: <Register />,
     },
+    
   ]);
 
   return (

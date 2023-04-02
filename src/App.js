@@ -1,6 +1,6 @@
-import Navbar from "./componenets/navbar/Navbar"
-import LeftBar from "./componenets/leftBar/LeftBar";
-import RightBar from "./componenets/rightbar/RightBar";
+import Navbar from "./components/navbar/Navbar"
+import LeftBar from "./components/leftBar/LeftBar";
+import RightBar from "./components/rightbar/RightBar";
 import Home from "./pages/home/Home";
 import Profile from "./pages/profile/Profile";
 import Login from "./pages/login/Login"
@@ -29,22 +29,22 @@ function App() {
       </div>
     );
   };
-
+/*
   // If User isn't logged in, user will be navigated to Home Page
   const ProtectedRoute = ({children}) => {
     if(!currentUser){
-      return <Navigate to="/home" />
+      return <Navigate to="/home" /> // with the help of React Router
     }
     return children;
-  }
+  }*/
 
   const router = createBrowserRouter([
     {
       path: "/",
       element: (
-        <ProtectedRoute>
+        //<ProtectedRoute>
           <Layout />
-        </ProtectedRoute>
+        //</ProtectedRoute>
         ),
       children:[
         {

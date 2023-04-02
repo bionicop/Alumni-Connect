@@ -1,47 +1,51 @@
-.navbar{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 20px;
-    height: 40px;
-    border-bottom: 1px solid lightgrey;
-    position: sticky;
-    top: 0;
-    background-color: #14213D;
-    color: white;
+@import "../../style.scss";
 
-    .left{
+.navbar {
+    @include themify($themes) {
         display: flex;
         align-items: center;
-        gap: 30px;
+        justify-content: space-between;
+        padding: 10px 20px;
+        height: 40px;
+        border-bottom: 1px solid themed("border");
+        position: sticky;
+        top: 0;
+        background-color: themed("bg");
+        color: themed("textColor");
 
-        span{
-            font-weight: bold;
-            font-size: 20px;
-            color: white;
-        }
-
-        .search{
+        .left {
             display: flex;
             align-items: center;
-            gap: 10px;
-            border: 1px solid rgba(#E5E5E5,0.3);
-            border-radius: none;
-            padding: 0px 5px;
-            
-            input{
-                border: none;
-                width: 600px;
-                background-color: transparent;
-                color: #E5E5E5;
+            gap: 30px;
+
+            span {
+                font-weight: bold;
+                font-size: 20px;
+                color: themed("logo");
+            }
+
+            .search {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                border: 1px solid themed("searchBorder");
+                border-radius: none;
+                padding: 0px 5px;
+
+                input {
+                    border: none;
+                    width: 600px;
+                    background-color: transparent;
+                    color: themed("textColor");
+                }
             }
         }
-    }
 
-    .right{
-        display: flex;
-        align-items: center;
-        gap: 50px;
-        font-weight: 500;
+        .right {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            font-weight: 500;
+        }
     }
 }

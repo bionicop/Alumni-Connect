@@ -7,6 +7,8 @@ import Events from "./pages/events/Events";
 import Profile from "./pages/profile/Profile";
 import Login from "./pages/login/Login"
 import Register from "./pages/register/Register";
+import "./style.scss"
+
 // React Router
 import {
   createBrowserRouter,
@@ -21,7 +23,7 @@ function App() {
 
   const Layout = ()=>{
     return(
-      <div className="$themes">
+      <div className="theme-default">
         <Navbar />
         <div style={{display: "flex"}}>
           <LeftBar />
@@ -55,26 +57,26 @@ function App() {
           element:<Home />,
         },
         {
+          path:"/alumni",
+          element:<Alumni />,
+        },
+        {
+          path:"/awards",
+          element:<Awards />,
+        },
+        {
+          path: "/events",
+          element: <Events />,
+        },
+        {
           path:"/profile/:id",
           element:<Profile />,
         }
       ]
     },
     {
-      path:"/alumni",
-      element:<Alumni />,
-    },
-    {
-      path:"/awards",
-      element:<Awards />,
-    },
-    {
       path: "/login",
       element: <Login />,
-    },
-    {
-      path: "/events",
-      element: <Events />,
     },
     {
       path: "/register",

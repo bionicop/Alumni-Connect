@@ -1,53 +1,54 @@
+@import "../../style.scss";
+
 .leftBar {
-    position: sticky;
-    flex: 2;
-    top: 70px;
-    height: calc(100vh - 70px);
-    overflow: scroll;
-    background-color: rgba(20, 33, 61,0.5);
-    color: white;
+    @include themify($themes) {
+        background-color: themed("bg");
+        color: themed("textColor");
+        position: sticky;
+        flex: 2;
+        top: 70px;
+        height: calc(100vh - 70px);
+        overflow: scroll;
 
-    &::-webkit-scrollbar{
-        display: none;
-    }
-
-    .container {
-        padding: 20px;
-
-        hr{
-            margin: 20px 0px;
-            border: none;
-            height: 0.5px;
-            background-color: rgba(20, 33, 61);
+        &::-webkit-scrollbar {
+            display: none;
         }
-        .menu {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
 
-            span{
-                font-size: 12px;
+        .container {
+            padding: 20px;
+
+            hr {
+                margin: 20px 0px;
+                border: none;
+                height: 0.5px;
+                background-color: themed("border");
             }
 
-            .home,
-            .noticeBoard,
-            .events,
-            .alumni,
-            .awards,
-            .jobsAndInternships,
-            .post {
+            .menu {
                 display: flex;
-                align-items: center;
-                gap: 10px;
-            }
-
-            .item {
-                display: flex;
-                align-items: center;
-                gap: 10px;
+                flex-direction: column;
+                gap: 20px;
 
                 span {
-                    font-size: 14px;
+                    font-size: 12px;
+                }
+
+                .home,
+                .noticeBoard,
+                .events,
+                .alumni,
+                .awards,
+                .jobsAndInternships,
+                .post,
+                .item {
+                    color: themed("textColor");
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+
+                    span {
+                        font-size: 14px;
+                    }
                 }
             }
         }

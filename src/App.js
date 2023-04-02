@@ -5,8 +5,7 @@ import Events from "./pages/events/Events";
 import Alumni from "./pages/alumni/Alumni";
 import Awards from "./pages/awards/Awards";
 import JobsAndIntern from "./pages/jobsAndIntern/JobsAndIntern";
-import Post from "./pages/post/Post";
-
+import Posts from "./pages/posts/Posts";
 import Profile from "./pages/profile/Profile";
 import Login from "./pages/login/Login"
 import Register from "./pages/register/Register";
@@ -14,7 +13,6 @@ import { useContext } from "react";
 import { DarkModeContext } from "./context/darkModeContext";
 import { AuthContext } from "./context/authContext";
 import "./style.scss"
-
 // React Router
 import {
   createBrowserRouter,
@@ -85,8 +83,8 @@ function App() {
           element: <JobsAndIntern />,
         },
         {
-          path: "/post",
-          element: <Post />,
+          path:"/posts",
+          element:<Posts />,
         },
         {
           path:"/profile/:id",

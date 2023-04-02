@@ -37,7 +37,7 @@ const LeftBar = () => {
 
           <div className="post">
             <HomeOutlinedIcon/>
-            <span>Post</span>
+            <span>Posts</span>
           </div>
 
         </div>

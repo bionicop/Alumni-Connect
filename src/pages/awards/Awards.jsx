@@ -1,4 +1,4 @@
-import "./awards.scss"
+import "../style.scss"
 
 const Awards = () => {
 return (

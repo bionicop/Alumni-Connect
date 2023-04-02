@@ -1,8 +1,10 @@
-import "./profile.scss"
+import "../style.scss"
 
 const Profile = () => {
   return (
-    <div className="profile">Profile</div>
+    <div className="profile">
+      <p>This is Profile!</p>
+    </div>
   )
 }
 

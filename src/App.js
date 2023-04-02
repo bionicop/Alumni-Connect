@@ -1,14 +1,18 @@
 import Navbar from "./components/navbar/Navbar"
 import LeftBar from "./components/leftBar/LeftBar";
 import Home from "./pages/home/Home";
+import Events from "./pages/events/Events";
 import Alumni from "./pages/alumni/Alumni";
 import Awards from "./pages/awards/Awards";
-import Events from "./pages/events/Events";
+import JobsAndIntern from "./pages/jobsAndIntern/JobsAndIntern";
+import Post from "./pages/post/Post";
+
 import Profile from "./pages/profile/Profile";
 import Login from "./pages/login/Login"
 import Register from "./pages/register/Register";
 import { useContext } from "react";
 import { DarkModeContext } from "./context/darkModeContext";
+import { AuthContext } from "./context/authContext";
 import "./style.scss"
 
 // React Router
@@ -16,11 +20,12 @@ import {
   createBrowserRouter,
   Outlet,
   RouterProvider,
+  Navigate,
 } from "react-router-dom";
 
 function App() {
 
-  const currentUser = false;
+  const currentUser = useContext(AuthContext);
 
   const { darkMode } = useContext(DarkModeContext);
 
@@ -37,27 +42,35 @@ function App() {
       </div>
     );
   };
-/*
+
   // If User isn't logged in, user will be navigated to Home Page
-  const ProtectedRoute = ({children}) => {
+  const ProtectedRoute = ({ children }) => {
     if(!currentUser){
-      return <Navigate to="/home" /> // with the help of React Router
+      return <Navigate to="/home"/> // with the help of React Router
     }
     return children;
-  }*/
+  }
 
   const router = createBrowserRouter([
     {
       path: "/",
       element: (
-        //<ProtectedRoute>
+        <ProtectedRoute>
           <Layout />
-        //</ProtectedRoute>
+        </ProtectedRoute>
         ),
       children:[
         {
+          path:"/",
+          element:<Home />,
+        },
+        {
           path:"/home",
           element:<Home />,
+        },
+        {
+          path: "/events",
+          element: <Events />,
         },
         {
           path:"/alumni",
@@ -68,8 +81,12 @@ function App() {
           element:<Awards />,
         },
         {
-          path: "/events",
-          element: <Events />,
+          path: "/jobsAndIntern",
+          element: <JobsAndIntern />,
+        },
+        {
+          path: "/post",
+          element: <Post />,
         },
         {
           path:"/profile/:id",

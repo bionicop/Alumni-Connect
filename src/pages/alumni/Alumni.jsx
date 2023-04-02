@@ -1,4 +1,4 @@
-import "./alumni.scss"
+import "../style.scss"
 
 const Alumni = () => {
 return (

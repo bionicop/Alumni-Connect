@@ -1,4 +1,4 @@
-import "./events.scss"
+import "../style.scss"
 
 const Events = () => {
 return (

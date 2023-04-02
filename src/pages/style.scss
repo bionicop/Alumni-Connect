@@ -1,15 +1,22 @@
 body {
-    background: linear-gradient(rgba(20, 33, 61, 1), rgba(10, 9, 8, 0.6)), url('../../../public/images/noida-bg-1.jpg');
+    background: linear-gradient(rgba(20, 33, 61, 1), rgba(10, 9, 8, 0.6)), url('../../public/images/noida-bg-1.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 
-    &::-webkit-scrollbar{
+    &::-webkit-scrollbar {
         display: none;
     }
 }
 
-.home {
+.start,
+.jobsAndIntern,
+.events,
+.home,
+.awards,
+.alumni,
+.post,
+.profile {
     color: white;
 
     .start {

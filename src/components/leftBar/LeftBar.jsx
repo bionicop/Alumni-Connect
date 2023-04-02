@@ -3,6 +3,7 @@ import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import EventNoteOutlinedIcon from '@mui/icons-material/EventNoteOutlined';
 import Groups3OutlinedIcon from '@mui/icons-material/Groups3Outlined';
 import EmojiEventsOutlinedIcon from '@mui/icons-material/EmojiEventsOutlined';
+import PostAddOutlinedIcon from '@mui/icons-material/PostAddOutlined';
 
 const LeftBar = () => {
   return (
@@ -35,8 +36,8 @@ const LeftBar = () => {
             <span>Jobs and Internships</span>
           </div>
 
-          <div className="post">
-            <HomeOutlinedIcon/>
+          <div className="Posts">
+            <PostAddOutlinedIcon/>
             <span>Posts</span>
           </div>
 

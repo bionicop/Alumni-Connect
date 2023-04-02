@@ -38,6 +38,10 @@
                     width: 600px;
                     background-color: transparent;
                     color: themed("textColor");
+
+                    @include mobile{
+                        display: none;
+                    }
                 }
             }
         }
@@ -47,6 +51,10 @@
             align-items: center;
             gap: 50px;
             font-weight: 500;
+
+            @include mobile{
+                display: none;
+            }
         }
     }
 }

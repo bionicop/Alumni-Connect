@@ -7,7 +7,7 @@ $themes: (
         logo: white,
         bgSoft: #333,
         textColorSoft: lightgray,
-        border: white,
+        border: lightgray,
         searchBorder: rgba(229, 229, 229,0.3),
     ),
     light: (
@@ -53,4 +53,10 @@ $themes: (
 
 @function themed($key) {
     @return map-get($theme-map, $key);
-}
+  }
+  
+  @mixin mobile {
+    @media (max-width: 480px) {
+      @content;
+    }
+  }

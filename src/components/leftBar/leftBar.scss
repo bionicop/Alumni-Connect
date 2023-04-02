@@ -10,6 +10,10 @@
         height: calc(100vh - 70px);
         overflow: scroll;
 
+        @include mobile{
+            display: none;
+        }
+
         &::-webkit-scrollbar {
             display: none;
         }
@@ -39,8 +43,8 @@
                 .alumni,
                 .awards,
                 .jobsAndInternships,
-                .post,
-                .item {
+                .item,
+                .Posts{
                     color: themed("textColor");
                     display: flex;
                     align-items: center;

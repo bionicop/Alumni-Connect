@@ -10,7 +10,7 @@
         height: calc(100vh - 70px);
         overflow: scroll;
 
-        @include mobile{
+        @include mobile {
             display: none;
         }
 
@@ -44,7 +44,7 @@
                 .awards,
                 .jobsAndInternships,
                 .item,
-                .Posts{
+                .Posts {
                     color: themed("textColor");
                     display: flex;
                     align-items: center;
@@ -52,6 +52,11 @@
 
                     span {
                         font-size: 14px;
+                        width: 50%;
+                        padding: 10px;
+                        border: none;
+                        color: white;
+                        cursor: pointer;
                     }
                 }
             }

@@ -16,7 +16,7 @@ const Navbar = () => {
     <div className="navbar">
       <div className="left">
         <Link to="/" style={{textDecoration:"none"}}>
-          <span>Alumni Connect</span>
+          <span>GradLink</span>
         </Link>
         <br/>
 

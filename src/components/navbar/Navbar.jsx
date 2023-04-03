@@ -34,7 +34,9 @@ const Navbar = () => {
       </div>
 
       <div className="right">
-        <AccountCircleOutlinedIcon />
+        <Link style={{textDecoration: 'none'}} to="/login">
+          <AccountCircleOutlinedIcon />
+        </Link>
         <NotificationsOutlinedIcon />
         <ChatBubbleOutlineOutlinedIcon />
       </div>

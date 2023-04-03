@@ -5,6 +5,11 @@
     align-items: center;
     justify-content: center;
 
+    .error-message {
+        color: red;
+        font-weight: bold;
+      }
+
     .card{
         width: 50%;
         display: flex;

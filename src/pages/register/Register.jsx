@@ -1,7 +1,33 @@
-import { Link, Navigate } from "react-router-dom";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 import "./register.scss";
+import axios from "axios";
 
 const Register = () => {
+  const [inputs, setInputs] = useState({
+    email: "",
+    fullname: "",
+    username: "",
+    password: "",
+  });
+  const [err, setErr] = useState(null);
+
+  const handleChange = (e) => {
+    setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const handleClick = async (e) => {
+    e.preventDefault();
+
+    try {
+      await axios.post("http://localhost:8800/api/auth/register", inputs);
+    } catch (err) {
+      setErr(err.response.data);
+    }
+  };
+
+  console.log(err);
+
   return (
     <div className="register">
       <div className="card">
@@ -16,7 +42,7 @@ const Register = () => {
           </p>
           <span>Do you have an account?</span>
           <Link to="/login">
-          <button>Login</button>
+            <button>Login</button>
           </Link>
         </div>
         <div className="right">
@@ -25,29 +51,33 @@ const Register = () => {
             <input
               type="email"
               placeholder="Email"
+              name="email"
+              onChange={handleChange}
               required
             />
             <input
               type="text"
               placeholder="Full Name"
+              name="fullname"
+              onChange={handleChange}
               required
             />
             <input
               type="text"
               placeholder="Username"
+              name="username"
+              onChange={handleChange}
               required
             />
             <input
               type="password"
               placeholder="Password"
+              name="password"
+              onChange={handleChange}
               required
             />
-            <input
-              type="password"
-              placeholder="Confirm Password"
-              required
-            />
-            <button type="submit">Register</button>
+            {err && err}
+            <button onClick={handleClick}>Register</button>
           </form>
         </div>
       </div>

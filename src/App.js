@@ -5,7 +5,7 @@ import Events from "./pages/events/Events";
 import Alumni from "./pages/alumni/Alumni";
 import Awards from "./pages/awards/Awards";
 import JobsAndIntern from "./pages/jobsAndIntern/JobsAndIntern";
-import Posts from "./pages/posts/Posts";
+import Posts from "../src/components/posts/Posts";
 import Profile from "./pages/profile/Profile";
 import Login from "./pages/login/Login"
 import Register from "./pages/register/Register";
@@ -71,6 +71,10 @@ function App() {
           element: <Events />,
         },
         {
+          path:"/posts",
+          element:<Posts />,
+        },
+        {
           path:"/alumni",
           element:<Alumni />,
         },
@@ -81,10 +85,6 @@ function App() {
         {
           path: "/jobsAndIntern",
           element: <JobsAndIntern />,
-        },
-        {
-          path:"/posts",
-          element:<Posts />,
         },
         {
           path:"/profile/:id",

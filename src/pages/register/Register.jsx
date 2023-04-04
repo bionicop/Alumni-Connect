@@ -5,12 +5,13 @@ import axios from "axios";
 
 const Register = () => {
   const [inputs, setInputs] = useState({
-    email: "",
-    name: "",
     username: "",
+    email: "",
     password: "",
+    name: "",
   });
   const [err, setErr] = useState(null);
+  const [message, setMessage] = useState(null);
 
   const handleChange = (e) => {
     setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -18,15 +19,23 @@ const Register = () => {
 
   const handleClick = async (e) => {
     e.preventDefault();
-
+  
+    const { name, email, username, password } = inputs;
+    if (!name || !email || !username || !password) {
+      setErr("Please fill out all the fields.");
+      setMessage(null);
+      return;
+    }
+  
     try {
-      await axios.post("http://localhost:8800/api/auth/register", inputs);
+      const response = await axios.post("http://localhost:8800/api/auth/register", inputs);
+      setMessage(response.data);
+      setErr(null);
     } catch (err) {
       setErr(err.response.data);
+      setMessage(null);
     }
-  };
-
-  console.log(err);
+  };  
 
   return (
     <div className="register">
@@ -48,36 +57,33 @@ const Register = () => {
         <div className="right">
           <h1>Register</h1>
           <form>
-            <input
-              type="email"
-              placeholder="Email"
-              name="email"
-              onChange={handleChange}
-              required
-            />
-            <input
+          <input
               type="text"
-              placeholder="Full Name"
+              placeholder="Name"
               name="name"
               onChange={handleChange}
-              required
             />
             <input
               type="text"
               placeholder="Username"
               name="username"
               onChange={handleChange}
-              required
+            />
+            <input
+              type="email"
+              placeholder="Email"
+              name="email"
+              onChange={handleChange}
             />
             <input
               type="password"
               placeholder="Password"
               name="password"
               onChange={handleChange}
-              required
             />
-            {err && err}
+            <p></p>
             <button onClick={handleClick}>Register</button>
+            <div className="error-message">{message && <p>{message}</p>}{err && <p>{err}</p>}</div>
           </form>
         </div>
       </div>

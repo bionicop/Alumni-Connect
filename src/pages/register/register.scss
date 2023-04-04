@@ -37,8 +37,8 @@
                 width: 50%;
                 padding: 10px;
                 border: none;
-                background-color: #22333B;
-                color: #E5E5E5;
+                background-color: #E5E5E5;
+                color:  #22333B;
                 font-weight: bold;
                 cursor: pointer;
             }
@@ -61,7 +61,10 @@
                 display: flex;
                 flex-direction: column;
                 gap: 30px;
-                color: #ff0000;
+
+                .error-message{
+                    color:#FA383E;
+                };
 
                 input{
                     border: none;

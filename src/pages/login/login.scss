@@ -1,4 +1,4 @@
-.login{
+.login {
     height: 100vh;
     display: flex;
     background-color: rgba(234, 224, 213);
@@ -8,49 +8,47 @@
     .error-message {
         color: red;
         font-weight: bold;
-      }
+    }
 
-    .card{
+    .card {
         width: 50%;
         display: flex;
         background-color: white;
         min-height: 600px;
-        border-radius: 10px;   
+        border-radius: 10px;
         color: #E5E5E5;
         overflow: hidden;
 
-        .left{
+        .left {
             flex: 1;
-            background: linear-gradient(rgba(20, 33, 61, 0.8),rgba(10, 9, 8, 0.5)),url('../../../public/images/noida-bg-1.jpg');
+            background: linear-gradient(rgba(20, 33, 61, 0.8), rgba(10, 9, 8, 0.5)), url('../../../public/images/noida-bg-1.jpg');
             background-size: cover;
             display: flex;
             flex-direction: column;
             padding: 50px;
             gap: 30px;
-            
-            h1{
+
+            h1 {
                 font-size: 100px;
                 line-height: 100px;
             }
 
-            p{}
-
-            span{
+            span {
                 font-size: 14px;
             }
 
-            button{
+            button {
                 width: 50%;
                 padding: 10px;
                 border: none;
-                background-color: #22333B;
-                color: #E5E5E5;
+                background-color: #E5E5E5;
+                color:  #22333B;
                 font-weight: bold;
                 cursor: pointer;
             }
         }
 
-        .right{
+        .right {
             flex: 1;
             display: flex;
             flex-direction: column;
@@ -58,7 +56,7 @@
             padding: 50px;
             gap: 50px;
 
-            h1{
+            h1 {
                 color: #555;
             }
 
@@ -66,14 +64,18 @@
                 display: flex;
                 flex-direction: column;
                 gap: 30px;
+                
+                .error-message{
+                    color:#FA383E;
+                };
 
-                input{
+                input {
                     border: none;
                     border-bottom: 1px solid lightgray;
                     padding: 20px 10px;
                 }
 
-                button{
+                button {
                     width: 50%;
                     padding: 10px;
                     border: none;

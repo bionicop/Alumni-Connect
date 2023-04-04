@@ -1,5 +1,19 @@
-.posts{
+@import "../../style.scss";
+
+.posts {
   display: flex;
   flex-direction: column;
   gap: 20px;
+
+  @include themify($themes) {
+    .share {
+      border-radius: 20px;
+      background-color: themed("bg");
+      color: themed("textColor");
+      max-width: 550px;
+      min-width: 750px;
+      margin: 50px auto;
+    }
+  }
+
 }

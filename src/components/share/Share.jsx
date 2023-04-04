@@ -1,7 +1,7 @@
 import "./share.scss";
-import Image from "../../assets/img.png";
-import Map from "../../assets/map.png";
-import Friend from "../../assets/friend.png";
+import ImageOutlinedIcon from '@mui/icons-material/ImageOutlined';
+import MapOutlinedIcon from '@mui/icons-material/MapOutlined';
+import GroupOutlinedIcon from '@mui/icons-material/GroupOutlined';
 import { useContext, useState } from "react";
 import { AuthContext } from "../../context/authContext";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
@@ -53,7 +53,7 @@ const Share = () => {
           <div className="left">
             <img src={"/upload/" + currentUser.profilePic} alt="" />
             <input
-              type="text"
+              type="textbox"
               placeholder={`What's on your mind ${currentUser.name}?`}
               onChange={(e) => setDesc(e.target.value)}
               value={desc}
@@ -76,21 +76,21 @@ const Share = () => {
             />
             <label htmlFor="file">
               <div className="item">
-                <img src={Image} alt="" />
+                <ImageOutlinedIcon />
                 <span>Add Image</span>
               </div>
             </label>
             <div className="item">
-              <img src={Map} alt="" />
+              <MapOutlinedIcon />
               <span>Add Place</span>
             </div>
             <div className="item">
-              <img src={Friend} alt="" />
+              <GroupOutlinedIcon />
               <span>Tag Friends</span>
             </div>
           </div>
           <div className="right">
-            <button onClick={handleClick}>Share</button>
+            <button>Share</button>
           </div>
         </div>
       </div>

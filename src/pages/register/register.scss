@@ -29,8 +29,6 @@
                 line-height: 100px;
             }
 
-            p{}
-
             span{
                 font-size: 14px;
             }
@@ -63,6 +61,7 @@
                 display: flex;
                 flex-direction: column;
                 gap: 30px;
+                color: #ff0000;
 
                 input{
                     border: none;

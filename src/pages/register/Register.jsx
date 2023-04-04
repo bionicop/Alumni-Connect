@@ -6,7 +6,7 @@ import axios from "axios";
 const Register = () => {
   const [inputs, setInputs] = useState({
     email: "",
-    fullname: "",
+    name: "",
     username: "",
     password: "",
   });
@@ -58,7 +58,7 @@ const Register = () => {
             <input
               type="text"
               placeholder="Full Name"
-              name="fullname"
+              name="name"
               onChange={handleChange}
               required
             />

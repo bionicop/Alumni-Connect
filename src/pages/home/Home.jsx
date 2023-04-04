@@ -1,4 +1,5 @@
-import "../style.scss" 
+import "../style.scss";
+import Posts from "../../components/posts/Posts";
 
 const Home = () => {
 return (

@@ -44,6 +44,18 @@
                     }
                 }
             }
+
+            .actions {
+                display: flex;
+                justify-content: flex-end;
+                width: 100%;
+                gap: 0.5rem;
+            
+                @media screen and (max-width: 360px) {
+                    justify-content: flex-start;
+                    margin-left: 1rem;
+                }
+            }
         }
 
         .right {

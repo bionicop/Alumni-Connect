@@ -1,3 +1,6 @@
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import Login from "./pages/login/Login";
+import Register from "./pages/register/Register";
 import Navbar from "./components/navbar/Navbar"
 import LeftBar from "./components/leftBar/LeftBar";
 import Home from "./pages/home/Home";
@@ -7,28 +10,28 @@ import Awards from "./pages/awards/Awards";
 import JobsAndIntern from "./pages/jobsAndIntern/JobsAndIntern";
 import Posts from "../src/components/posts/Posts";
 import Profile from "./pages/profile/Profile";
-import Login from "./pages/login/Login"
-import Register from "./pages/register/Register";
 import { useContext } from "react";
 import { DarkModeContext } from "./context/darkModeContext";
 import { AuthContext } from "./context/authContext";
 import "./style.scss"
+
 // React Router
 import {
   createBrowserRouter,
-  Outlet,
   RouterProvider,
+  Outlet,
   Navigate,
 } from "react-router-dom";
 
 function App() {
 
   const currentUser = useContext(AuthContext);
-
+  const queryClient = new QueryClient();
   const { darkMode } = useContext(DarkModeContext);
 
   const Layout = ()=>{
     return(
+      <QueryClientProvider client={queryClient}>
       <div className={`theme-${darkMode ? "dark" : "default"}`}>
         <Navbar />
         <div style={{display: "flex"}}>
@@ -38,6 +41,7 @@ function App() {
           </div>
         </div>
       </div>
+      </QueryClientProvider>
     );
   };
 
@@ -67,12 +71,12 @@ function App() {
           element:<Home />,
         },
         {
-          path: "/events",
-          element: <Events />,
-        },
-        {
           path:"/posts",
           element:<Posts />,
+        },
+        {
+          path: "/events",
+          element: <Events />,
         },
         {
           path:"/alumni",

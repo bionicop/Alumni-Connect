@@ -25,12 +25,10 @@ const Navbar = () => {
         ) : (
           <DarkModeOutlinedIcon onClick={toggle} />
         )}
-        
         <div className="search">
           <SearchOutlinedIcon />
           <input type="text" placeholder="Search"/>
         </div>
-
       </div>
 
       <div className="right">

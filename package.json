@@ -16,14 +16,15 @@
     "moment": "^2.29.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-feather": "^2.0.10",
     "react-loading-skeleton": "^3.2.0",
     "react-mentions": "^4.4.7",
     "react-query": "^3.39.3",
     "react-router-dom": "^6.10.0",
     "react-scripts": "^5.0.1",
+    "react-slick": "^0.29.0",
     "sass": "^1.60.0",
-    "web-vitals": "^2.1.4",
-    "webpack-dev-server": "^4.13.2"
+    "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -48,5 +49,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "webpack-dev-server": "^4.13.2"
   }
 }

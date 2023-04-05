@@ -1,7 +1,7 @@
-@import "../style.scss";
+@import "../../style.scss";
 
 body {
-    background: linear-gradient(rgba(20, 33, 61, 1), rgba(10, 9, 8, 0.6)), url('../assets/noida-bg-1.jpg');
+    background: linear-gradient(rgba(20, 33, 61, 1), rgba(10, 9, 8, 0.6)), url('../../assets/noida-bg-1.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -11,19 +11,11 @@ body {
     }
 }
 
-.start,
-.jobsAndIntern,
-.events,
-.home,
-.awards,
-.alumni,
-.posts,
-.profile {
+.alumni {
     color: white;
 
     .start {
         padding: 50px;
-        text-align: center;
     }
 
     @include mobile{

@@ -16,7 +16,7 @@ const Update = ({ setOpenUpdate, user }) => {
   });
 
   const upload = async (file) => {
-    console.log(file)
+    //console.log(file);
     try {
       const formData = new FormData();
       formData.append("file", file);
@@ -49,16 +49,17 @@ const Update = ({ setOpenUpdate, user }) => {
     e.preventDefault();
 
     //TODO: find a better way to get image URL
-    
+
     let coverUrl;
     let profileUrl;
     coverUrl = cover ? await upload(cover) : user.coverPic;
     profileUrl = profile ? await upload(profile) : user.profilePic;
-    
+
     mutation.mutate({ ...texts, coverPic: coverUrl, profilePic: profileUrl });
     setOpenUpdate(false);
     setCover(null);
     setProfile(null);
+  };
 
   return (
     <div className="update">
@@ -150,7 +151,6 @@ const Update = ({ setOpenUpdate, user }) => {
       </div>
     </div>
   );
-};
 };
 
 export default Update;

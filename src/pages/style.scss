@@ -1,25 +1,40 @@
 @import "../style.scss";
 
-body {
+/* Enable smooth scrolling */
+html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Set styles for the body and its children */
+  body {
     background: linear-gradient(rgba(20, 33, 61, 1), rgba(10, 9, 8, 0.6)), url('../assets/noida-bg-1.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-
-    &::-webkit-scrollbar {
-        display: none;
-    }
-}
-
-.start,
-.jobsAndIntern,
-.events,
-.home,
-.awards,
-.alumni,
-.posts,
-.profile {
     color: white;
+  
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  
+    .start {
+      padding: 50px;
+      text-align: center;
+  
+      @include mobile{
+          padding: 10px;
+      }
+    }
+  
+    .jobsAndIntern,
+    .events,
+    .home,
+    .awards,
+    .alumni,
+    .posts,
+    .profile {
+      color: white;
+    }
 
     .start {
         padding: 50px;
@@ -29,4 +44,5 @@ body {
     @include mobile{
         padding: 10px;
     }
-}
+  }
+  

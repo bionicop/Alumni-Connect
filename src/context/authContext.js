@@ -9,11 +9,22 @@ export const AuthContextProvider = ({ children }) => {
   );
 
   const login = async (inputs) => {
-    const res = await axios.post("http://localhost:8800/api/auth/login", inputs, {
-      withCredentials: true,
-    });
+    const res = await axios.post(
+      "http://localhost:8800/api/auth/login",
+      inputs,
+      {
+        withCredentials: true,
+      }
+    );
+    setCurrentUser(res.data);
 
-    setCurrentUser(res.data)
+    localStorage.setItem("user", JSON.stringify(res.data));
+  };
+
+  const logout = async (inputs) => {
+    await axios.post("http://localhost:8800/api/auth/logout");
+    setCurrentUser(null);
+    localStorage.removeItem("user");
   };
 
   useEffect(() => {
@@ -21,7 +32,7 @@ export const AuthContextProvider = ({ children }) => {
   }, [currentUser]);
 
   return (
-    <AuthContext.Provider value={{ currentUser, login }}>
+    <AuthContext.Provider value={{ currentUser, login, logout }}>
       {children}
     </AuthContext.Provider>
   );

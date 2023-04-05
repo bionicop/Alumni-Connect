@@ -1,24 +1,67 @@
 @import "../../style.scss";
 
 body {
-    background: linear-gradient(rgba(20, 33, 61, 1), rgba(10, 9, 8, 0.6)), url('../../assets/noida-bg-1.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-
-    &::-webkit-scrollbar {
-        display: none;
-    }
+  background: linear-gradient(rgba(20, 33, 61, 1), rgba(10, 9, 8, 0.6)), url('../../assets/noida-bg-1.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .alumni {
-    color: white;
+  color: white;
+  display: flex;
+    align-items: flex-start;
 
-    .start {
-        padding: 50px;
-    }
+  .alumni-list-container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .start {
+    padding: 50px;
+  }
 
-    @include mobile{
-        padding: 10px;
-    }
+  @include mobile{
+    padding: 10px;
+  }
+}  
+
+.header {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.alumni-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.alumnus {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem;
+  padding: 1rem;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-0.25rem);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  }
+
+  img {
+    width: 10rem;
+    height: 10rem;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+  }
+
+  .alumnus-info {
+    text-align: center;
+  }
 }

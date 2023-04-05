@@ -1,65 +1,65 @@
 @import "../../style.scss";
 
 .leftBar {
-    @include themify($themes) {
-        background-color: themed("bg");
-        color: themed("textColor");
-        position: sticky;
-        flex: 2;
-        top: 70px;
-        height: calc(100vh - 70px);
-        overflow: scroll;
+  @include themify($themes) {
+    background-color: themed("bg");
+    color: themed("textColor");
+    position: sticky;
+    flex: 2;
+    top: 70px;
+    height: calc(100vh - 70px);
+    overflow: scroll;
 
-        @include mobile {
-            display: none;
-        }
-
-        &::-webkit-scrollbar {
-            display: none;
-        }
-
-        .container {
-            padding: 20px;
-
-            hr {
-                margin: 20px 0px;
-                border: none;
-                height: 0.5px;
-                background-color: themed("border");
-            }
-
-            .menu {
-                display: flex;
-                flex-direction: column;
-                gap: 20px;
-
-                span {
-                    font-size: 12px;
-                }
-
-                .home,
-                .noticeBoard,
-                .events,
-                .alumni,
-                .awards,
-                .jobsAndInternships,
-                .item,
-                .Posts {
-                    color: themed("textColor");
-                    display: flex;
-                    align-items: center;
-                    gap: 10px;
-
-                    span {
-                        font-size: 14px;
-                        width: 50%;
-                        padding: 10px;
-                        border: none;
-                        color: white;
-                        cursor: pointer;
-                    }
-                }
-            }
-        }
+    &::-webkit-scrollbar {
+      display: none;
     }
+
+    .container {
+      padding: 20px;
+
+      hr {
+        margin: 20px 0px;
+        border: none;
+        height: 0.5px;
+        background-color: themed("border");
+      }
+
+      .menu {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        span {
+          font-size: 12px;
+        }
+
+        .home,
+        .noticeBoard,
+        .events,
+        .alumni,
+        .awards,
+        .jobsAndInternships,
+        .item,
+        .Posts {
+          color: themed("textColor");
+          display: flex;
+          align-items: center;
+          gap: 10px;
+
+          span {
+            font-size: 14px;
+            width: 50%;
+            padding: 10px;
+            border: none;
+            color: white;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+  
+  @include mobile {
+    display: none;
+  }
 }

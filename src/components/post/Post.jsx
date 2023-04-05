@@ -6,13 +6,14 @@ import ShareOutlinedIcon from "@mui/icons-material/ShareOutlined";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import { Link } from "react-router-dom";
 import Comments from "../comments/Comments";
-
-import { useState } from "react";
 import moment from "moment";
 import { useQuery, useQueryClient, useMutation } from "@tanstack/react-query";
 import { makeRequest } from "../../axios";
-import { useContext } from "react";
 import { AuthContext } from "../../context/authContext";
+import { 
+  useContext,
+  useState 
+} from "react";
 
 const Post = ({ post }) => {
   const [commentOpen, setCommentOpen] = useState(false);
@@ -59,6 +60,7 @@ const Post = ({ post }) => {
   const handleDelete = () => {
     deleteMutation.mutate(post.id);
   };
+  
   return (
     <div className="post">
       

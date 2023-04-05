@@ -4,87 +4,106 @@
     background-color: rgba(234, 224, 213);
     align-items: center;
     justify-content: center;
-
+  
     .error-message {
-        color: red;
-        font-weight: bold;
+      color: red;
+      font-weight: bold;
     }
-
+  
     .card {
-        width: 50%;
+      width: 50%;
+      display: flex;
+      background-color: white;
+      min-height: 600px;
+      border-radius: 10px;
+      color: #e5e5e5;
+      overflow: hidden;
+  
+      .left {
+        flex: 1;
+        background: linear-gradient(
+            rgba(20, 33, 61, 0.8),
+            rgba(10, 9, 8, 0.5)
+          ),
+          url("../../assets/noida-bg-1.jpg");
+        background-size: cover;
         display: flex;
-        background-color: white;
-        min-height: 600px;
-        border-radius: 10px;
-        color: #E5E5E5;
-        overflow: hidden;
-
-        .left {
-            flex: 1;
-            background: linear-gradient(rgba(20, 33, 61, 0.8), rgba(10, 9, 8, 0.5)), url('../../assets/noida-bg-1.jpg');
-            background-size: cover;
-            display: flex;
-            flex-direction: column;
-            padding: 50px;
-            gap: 30px;
-
-            h1 {
-                font-size: 100px;
-                line-height: 100px;
-            }
-
-            span {
-                font-size: 14px;
-            }
-
-            button {
-                width: 50%;
-                padding: 10px;
-                border: none;
-                background-color: #E5E5E5;
-                color:  #22333B;
-                font-weight: bold;
-                cursor: pointer;
-            }
+        flex-direction: column;
+        padding: 50px;
+        gap: 30px;
+  
+        h1 {
+          font-size: 100px;
+          line-height: 100px;
         }
-
-        .right {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 50px;
-            gap: 50px;
-
-            h1 {
-                color: #555;
-            }
-
-            form {
-                display: flex;
-                flex-direction: column;
-                gap: 30px;
-                
-                .error-message{
-                    color:#FA383E;
-                };
-
-                input {
-                    border: none;
-                    border-bottom: 1px solid lightgray;
-                    padding: 20px 10px;
-                }
-
-                button {
-                    width: 50%;
-                    padding: 10px;
-                    border: none;
-                    background-color: #22333B;
-                    color: #E5E5E5;
-                    font-weight: bold;
-                    cursor: pointer;
-                }
-            }
+  
+        span {
+          font-size: 14px;
         }
+  
+        button {
+          width: 50%;
+          padding: 10px;
+          border: none;
+          background-color: #e5e5e5;
+          color: #22333b;
+          font-weight: bold;
+          cursor: pointer;
+        }
+      }
+  
+      .right {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 50px;
+        gap: 50px;
+  
+        h1 {
+          color: #555;
+        }
+  
+        form {
+          display: flex;
+          flex-direction: column;
+          gap: 30px;
+  
+          .error-message {
+            color: #fa383e;
+          }
+  
+          .username-wrapper,.password-wrapper {
+            position: relative;
+  
+            input {
+              border: none;
+              border-bottom: 1px solid lightgray;
+              padding: 20px 10px;
+              width: 100%;
+            }
+  
+            .password-toggle {
+              position: absolute;
+              top: 50%;
+              right: 10px;
+              transform: translateY(-50%);
+              cursor: pointer;
+              color: #1c1e21;
+            }
+          }
+  
+          button {
+            width: 50%;
+            padding: 10px;
+            border: none;
+            background-color: #22333b;
+            color: #e5e5e5;
+            font-weight: bold;
+            cursor: pointer;
+          }
+        }
+      }
     }
-}
+  }
+  

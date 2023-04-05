@@ -19,23 +19,34 @@ const Register = () => {
 
   const handleClick = async (e) => {
     e.preventDefault();
-  
+
     const { name, email, username, password } = inputs;
     if (!name || !email || !username || !password) {
       setErr("Please fill out all the fields.");
       setMessage(null);
       return;
     }
-  
+
+    // Check if email has @gmail.com
+    if (!email.includes('@gmail.com')) {
+      setErr("Please enter a valid Gmail email address.");
+      setMessage(null);
+      return;
+    }
+
     try {
       const response = await axios.post("http://localhost:8800/api/auth/register", inputs);
       setMessage(response.data);
       setErr(null);
     } catch (err) {
-      setErr(err.response.data);
+      if (err.response.data === "User already exists!") {
+        setErr("Email is already being used.");
+      } else {
+        setErr(err.response.data);
+      }
       setMessage(null);
     }
-  };  
+  };
 
   return (
     <div className="register">
@@ -57,7 +68,7 @@ const Register = () => {
         <div className="right">
           <h1>Register</h1>
           <form>
-          <input
+            <input
               type="text"
               placeholder="Name"
               name="name"
@@ -83,7 +94,10 @@ const Register = () => {
             />
             <p></p>
             <button onClick={handleClick}>Register</button>
-            <div className="error-message">{message && <p>{message}</p>}{err && <p>{err}</p>}</div>
+            <div className="error-message">
+              {message && <p>{message}</p>}
+              {err && <p>{err}</p>}
+            </div>
           </form>
         </div>
       </div>

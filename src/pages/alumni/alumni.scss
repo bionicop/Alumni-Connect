@@ -10,21 +10,30 @@ body {
 .alumni {
   color: white;
   display: flex;
-    align-items: flex-start;
+  align-items: flex-start;
+
+  .header{
+    h1{
+      padding: 10px 40px;
+    }
+  }
 
   .alumni-list-container {
     display: flex;
     justify-content: center;
   }
-  
-  .start {
-    padding: 50px;
-  }
 
-  @include mobile{
+  @include mobile {
     padding: 10px;
+    flex-direction: column;
+    align-items: center;
+
+    .alumni-list-container {
+      flex-direction: column;
+      align-items: center;
+    }
   }
-}  
+}
 
 .header {
   text-align: center;

@@ -32,6 +32,8 @@ $themes: (
     ),
 );
 
+$primary-color: #0077ff;
+
 @mixin themify($themes) {
 
     @each $theme,

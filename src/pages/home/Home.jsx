@@ -18,6 +18,7 @@ const Home = () => {
         <h2>(Birla Institute of Technology Mesra Alumni Association)</h2>
         <Carousel images={images} />
         <Alumni />
+        
       </div>
     </div>
   );

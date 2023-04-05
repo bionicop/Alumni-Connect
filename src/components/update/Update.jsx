@@ -129,13 +129,6 @@ const Update = ({ setOpenUpdate, user }) => {
             name="name"
             onChange={handleChange}
           />
-          <label>Country / City</label>
-          <input
-            type="text"
-            name="city"
-            value={texts.city}
-            onChange={handleChange}
-          />
           <label>Website</label>
           <input
             type="text"
